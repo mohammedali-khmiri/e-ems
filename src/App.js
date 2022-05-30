@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { auth, handleUserProfile } from "./firebase/utils";
-import "./default.scss";
+
+//Layouts
 import MainLayout from "./layouts/MainLayout";
 import HomepageLayout from "./layouts/HomepageLayout";
+//pages
 import Homepage from "./pages/Homepage";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import Recovery from "./pages/Recovery";
+import "./default.scss";
+
 
 const initialState = {
 	currentUser: null,
@@ -79,6 +84,12 @@ class App extends Component {
 							)
 						}
 					/>
+					<Route  path="/recovery"
+					element={
+						<HomepageLayout >
+							<Recovery />
+						</HomepageLayout>
+					}/>
 				</Routes>
 			</div>
 		);
