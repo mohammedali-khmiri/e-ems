@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.scss";
 import { signInWithGoogle, auth } from "./../../firebase/utils";
 import FormInput from "./../forms/FormInput";
@@ -9,7 +9,7 @@ import AuthWrapper from "../AuthWrapper";
 const SignIn = (props) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-
+	const navigate = useNavigate();
 	const resetForm = () => {
 		setEmail("");
 		setPassword("");
@@ -21,8 +21,9 @@ const SignIn = (props) => {
 		try {
 			await auth.signInWithEmailAndPassword(email, password);
 			resetForm();
+			navigate("/");
 		} catch (err) {
-			// console.log(err)
+			console.log(err);
 		}
 	};
 

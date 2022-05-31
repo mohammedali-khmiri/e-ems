@@ -55,9 +55,9 @@ class App extends Component {
 							currentUser ? (
 								<Navigate to="/" />
 							) : (
-								<HomepageLayout>
+								<MainLayout>
 									<Registration />
-								</HomepageLayout>
+								</MainLayout>
 							)
 						}
 					/>
@@ -67,18 +67,18 @@ class App extends Component {
 							currentUser ? (
 								<Navigate to="/" />
 							) : (
-								<HomepageLayout>
+								<MainLayout>
 									<Login />
-								</HomepageLayout>
+								</MainLayout>
 							)
 						}
 					/>
 					<Route
 						path="/recovery"
 						element={
-							<HomepageLayout>
+							<MainLayout>
 								<Recovery />
-							</HomepageLayout>
+							</MainLayout>
 						}
 					/>
 				</Routes>

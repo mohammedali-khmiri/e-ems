@@ -49,6 +49,7 @@ class Signup extends Component {
 			this.setState({
 				...initialState,
 			});
+			
 		} catch (err) {
 			// console.log(err)
 		}
